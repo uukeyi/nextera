@@ -1,0 +1,46 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 10px 20px;
+  background-color: transparent; 
+}
+
+
+.inner {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.logo {
+   height: 75px;
+   object-fit:cover;
+   cursor: pointer;
+}
+
+.nav ul {
+   list-style: none;
+   display: flex;
+   gap: 25px;
+   margin: 0;
+   padding: 0;
+}
+
+.nav li {
+   color: white;
+   font-size: 17px;
+   cursor: pointer;
+   font-family: "Alice", serif;
+    font-weight: 400;
+  font-style: normal;
+}
+
+.line {
+   margin-top: 10px;
+   height: 1px;
+   background-color: #bfcfd1;
+   opacity: 0.5;
+}
