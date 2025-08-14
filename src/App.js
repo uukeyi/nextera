@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import MainLayout from "./layout/MainLayout";
-import TestPage from "./pages/TestPage/TestPage";
+import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 function App() {
    useEffect(() => {
       AOS.init({
@@ -19,7 +19,7 @@ function App() {
          <Routes>
             <Route element={<MainLayout />}>
                <Route path="/" element={<Home/>} />
-               <Route path="/projects" element={<TestPage/>}/>
+               <Route path="/projects" element={<ProjectsPage/>}/>
             </Route>
          </Routes>
       </Router>

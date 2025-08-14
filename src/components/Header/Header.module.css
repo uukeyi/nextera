@@ -1,46 +1,51 @@
+/* фиксированный хедер */
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  padding: 10px 20px;
-  background-color: transparent; 
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 10000;
+  padding: 10px 40px;
+  background: transparent;
+}
+.inner { display:flex; justify-content:space-between; align-items:center; }
+.logo { height:75px; object-fit:cover; cursor:pointer; }
+.nav ul { list-style:none; display:flex; gap:25px; margin:0; padding:0;  text-align: center;}
+.nav li a, .nav li { color:#fff; font-size:17px; font-family:"Alice"  serif !important; text-decoration:none; }
+.line { margin-top:10px; height:1px; background:#bfcfd1; opacity:.5; }
+
+/* burger */
+.burger { display:none; width:28px; height:20px; padding:0; border:0; background:none; cursor:pointer; }
+.burger span { display:block; height:3px; background:#fff; border-radius:2px; transition:.3s; }
+.burger.open span:nth-child(1){ transform:rotate(45deg) translate(8px, 5px); }
+.burger.open span:nth-child(2){ opacity:0; }
+.burger.open span:nth-child(3){ transform:rotate(-45deg) translate(6.5px, -5px); }
+
+/* mobile: full-screen panel, только движение сверху вниз */
+@media (max-width:1024px) {
+  .burger { display:flex; flex-direction:column; justify-content:space-between; z-index:10001; }
+  .nav ul { flex-direction:column; gap:30px; }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    background: #17292D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: transform .45s ease; /* только transform */
+    z-index: 10000;
+  }
+  .nav.open {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav li a, .nav li { font-size:22px; }
+  .logo { height:60px; }
 }
 
-
-.inner {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-}
-
-.logo {
-   height: 75px;
-   object-fit:cover;
-   cursor: pointer;
-}
-
-.nav ul {
-   list-style: none;
-   display: flex;
-   gap: 25px;
-   margin: 0;
-   padding: 0;
-}
-
-.nav li {
-   color: white;
-   font-size: 17px;
-   cursor: pointer;
-   font-family: "Alice", serif;
-    font-weight: 400;
-  font-style: normal;
-}
-
-.line {
-   margin-top: 10px;
-   height: 1px;
-   background-color: #bfcfd1;
-   opacity: 0.5;
+@media (max-width:768px){
+  .header { padding:10px 20px; }
+  .nav li a, .nav li { font-size:20px; }
 }

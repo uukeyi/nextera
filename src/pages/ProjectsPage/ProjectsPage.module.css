@@ -1,0 +1,145 @@
+.content {
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+  position: relative;
+  z-index: 5;
+}
+
+  
+
+
+.animatedBackground {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: subtleVerticalScroll 12s ease-in-out infinite;
+}
+
+
+
+/* .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.swiper-slide img {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.titleContainer {
+  margin-top: 150px; /* расстояние от хедера вниз */
+  text-align: center;
+}
+.title {
+  font-size: 4rem;
+  font-family: "Alice", serif;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 3rem;
+  font-family: "Alice", serif;
+
+  margin: 10px 0;
+}
+
+.desc {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+.slider img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+/* --- Базовые стили уже есть --- */
+
+/* Планшеты (768px и меньше) */
+@media (max-width: 1024px) {
+  .titleContainer {
+    margin-top: calc(var(--header-height, 0px) + 20px); 
+
+  }
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+
+  .desc {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .content {
+    padding: 60px 15px;
+  }
+}
+
+/* Телефоны (480px и меньше) */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
+  }
+
+  .desc {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    padding: 40px 10px;
+  }
+
+  .slideImg{
+    max-height: 220px; /* 🔹 Ограничение высоты */
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Очень маленькие экраны (например, старые телефоны) */
+@media (max-width: 480px) {
+  .titleContainer {
+  margin-top: calc(var(--header-height, 0px) + 50px); 
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+  .content {
+    padding: 70px 10px;
+  }
+
+  .swiper-slide img {
+    max-height: 150px; /* 🔹 Ещё меньше высота на очень маленьких экранах */
+    object-fit: cover;
+  }
+}
